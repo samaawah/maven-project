@@ -1,6 +1,8 @@
 pipeline{
 agent any
-tools {maven 'localMaven'}
+tools {maven 'localMaven'
+	java 'localJdk'
+}
 stages{
 	stage('Build'){
 		steps{
