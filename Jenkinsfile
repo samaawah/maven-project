@@ -1,7 +1,7 @@
 pipeline{
 agent any
-stages{
 tools {maven 'localMaven'}
+stages{
 	stage('Build'){
 		steps{
 			powershell 'mvn clean package'
