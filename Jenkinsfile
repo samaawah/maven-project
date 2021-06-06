@@ -24,7 +24,7 @@ stages{
 	}
 	stage('Deploy to Staging'){
 			steps{
-				sh "mvn clean deploy -DskipTests"
+				sh "mvn clean deploy -s /home/ec2-user/.m2/settings.xml -DskipTests"
 			}
 			
 		}
