@@ -24,7 +24,7 @@ stages{
 	}
 	stage('Deploy to Staging'){
 			steps{
-				sh 'mvn deploy'
+				sh "mvn clean deploy -DskipTests"
 			}
 			
 		}
