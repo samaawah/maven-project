@@ -15,6 +15,11 @@ stages{
 		}
 		}
 	}
+	stage{
+		withSonarQubeEnv('SonarCloud') {
+    		sh "sonar:sonar -Dsonar.branch.name=${env.BRANCH_NAME}"
+		}
+	}
 	stage('Deploy to Staging'){
 			steps{
 				build job: 'deploy-to-staging'
