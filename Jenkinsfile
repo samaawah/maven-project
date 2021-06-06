@@ -15,7 +15,7 @@ stages{
 		}
 		}
 	}
-	stage{
+	stage('SonarQube Scan'){
 		steps{
 		withSonarQubeEnv('SonarCloud') {
     		sh "sonar:sonar -Dsonar.branch.name=${env.BRANCH_NAME}"
