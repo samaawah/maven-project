@@ -22,7 +22,7 @@ stages{
 			      -Dsonar.login=5729e6994dbbae5dfe326a7214b85fabae15a0e8"""
 		}
 	}
-	stage('Deploy to Staging'){
+	stage('Upload to Artifactory'){
 			steps{
 				sh "mvn clean deploy -DskipTests"
 			}
