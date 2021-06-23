@@ -28,7 +28,12 @@ stages{
 			}
 			
 		}
-
+	stage('Deploy to EC2'){
+			steps{
+				sh "ansible-playbook /etc/ansible/sample.yaml"
+			}
+			
+		}
 }
 
 }
