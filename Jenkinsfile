@@ -31,7 +31,6 @@ stages{
 		stage('Output') {
 		    steps {
 			    sh "echo ${WORKSPACE}"
-			input('Do you want to proceed?')
 		    }
         }
 	stage('Input') {
@@ -42,7 +41,7 @@ stages{
 
 	stage('Deploy to EC2'){
 			steps{
-				sh "ansible-playbook /etc/ansible/sample.yaml"
+				sh "ansible-playbook ${WORKSPACE}/deploy.yaml --extra-vars '{"hosts":"dev","workspace_path":${WORKSPACE}}'"
 			}
 			
 		}
