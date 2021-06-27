@@ -1,5 +1,8 @@
 pipeline{
 agent any
+environment { 
+        WORKSPACE = "${env.WORKSPACE}"
+    }
 tools {maven 'localMaven'
 	jdk 'localJdk'
 }
