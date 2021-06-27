@@ -30,6 +30,7 @@ stages{
 		}
 	stage('Input') {
 		    steps {
+			sh $WORKSPACE
 			input('Do you want to proceed?')
 		    }
         }
