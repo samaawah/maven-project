@@ -28,6 +28,11 @@ stages{
 			}
 			
 		}
+	stage('Input') {
+		    steps {
+			input('Do you want to proceed?')
+		    }
+        }
 	stage('Deploy to EC2'){
 			steps{
 				sh "ansible-playbook /etc/ansible/sample.yaml"
