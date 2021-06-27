@@ -32,12 +32,6 @@ pipeline {
       }
 
     }
-    stage('Output') {
-      steps {
-        sh "echo ${WORKSPACE}"
-      }
-    }
-
     stage('Deploy to DEV') {
       environment {
         HOSTS = "dev"
@@ -52,7 +46,6 @@ pipeline {
         input('Do you want to proceed?')
       }
     }
-
     stage('Deploy to Prod') {
       environment {
         HOSTS = "prod"
@@ -60,7 +53,6 @@ pipeline {
       steps {
         sh "ansible-playbook ${WORKSPACE}/deploy.yaml --extra-vars \"hosts=$HOSTS workspace_path=$WORKSPACE\""
       }
-
     }
   }
 
