@@ -44,7 +44,7 @@ stages{
 
 	stage('Deploy to EC2'){
 			steps{
-				sh "ansible-playbook ${WORKSPACE}/deploy.yaml"
+				sh "ansible-playbook ${WORKSPACE}/deploy.yaml --extra-vars '{"hosts":"dev","workspace_path":"${WORKSPACE}"}'""
 			}
 			
 		}
