@@ -32,7 +32,7 @@ pipeline {
       }
 
     }
-    stage('Deploy to DEV') {
+    stage('Deploy to us-west-2') {
       environment {
         HOSTS = "us-west-2"
       }
@@ -46,7 +46,7 @@ pipeline {
         input('Do you want to proceed?')
       }
     }
-    stage('Deploy to Prod') {
+    stage('Deploy to ap-south-1') {
       environment {
         HOSTS = "ap-south-1"
       }
